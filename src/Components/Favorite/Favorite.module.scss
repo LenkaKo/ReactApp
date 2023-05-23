@@ -1,0 +1,11 @@
+@import '../../Styles/settings.scss';
+
+.hero {
+    padding: $base-size;
+  }
+
+  .favorite_subtitle {
+    padding: ($base-size * 2) 0;
+    font-size: 15px;
+    text-align: center;
+  }

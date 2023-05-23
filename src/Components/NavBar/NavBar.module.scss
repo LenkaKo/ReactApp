@@ -1,0 +1,49 @@
+@import '../../Styles/settings.scss';
+
+
+.navbar {
+    background-color: darken($color-dark, 3%);
+}
+
+.nav_container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+}
+
+.nav_icon {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.nav_icon i {
+    font-size: 40px;
+    color: #fff;
+}
+
+.nav_icon i:hover {
+    color: $color-success;
+}
+
+.nav_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 24px;
+padding-right: 20px;
+}
+
+.linkActive:hover {
+    color: $color-success;
+}
