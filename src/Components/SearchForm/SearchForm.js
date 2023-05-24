@@ -13,11 +13,13 @@ const SearchForm = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         dispatch(updateSearch(searchString));
+        setSearchString('');
+        
     }
 
     return (
         <form className={styles.searchForm} onSubmit={handleSubmit}>
-            <TextInput placeholder="Search…"  value={searchString} onChange={(e) => setSearchString(e.target.value)} />
+            <TextInput placeholder="Search..."  value={searchString} onChange={(e) => setSearchString(e.target.value)} />
             <Button>
                 <span className="fa fa-search" />
             </Button>

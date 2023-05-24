@@ -3,10 +3,12 @@ import Card from '../Card/Card';
 import CardForm from '../CardForm/CardForm';
 import { useSelector } from 'react-redux';
 import { getFilteredCards } from '../../redux/store';
+import { getListById } from '../../redux/store';
 
 const Column = props => {
 
     const cards = useSelector(state => getFilteredCards(state, props.id));
+    const listData = useSelector(getListById);
     //console.log('Column render');
     
     return (
