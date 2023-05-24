@@ -1,34 +1,32 @@
-import styles from './Favorite.module.scss';
+import styles from './Favorite.module.scss'
 import PageTitle from '../PageTitle/PageTitle';
-import Card from "../Card/Card";
-import { getFavoriteList } from "../../redux/store";
-import { useSelector } from "react-redux";
-import shortid from "shortid";
+import { useSelector } from 'react-redux';
+import { getFliteredFavoriteCards } from '../../redux/cardsRedux';
+import Card from '../Card/Card';
+
+const Favorite = () =>{
+
+  const favoriteCards = useSelector(getFliteredFavoriteCards);
+
+    if(favoriteCards.lenght === 0) {
+      return(
+        <div className={styles.favorite}>
+          <PageTitle>Favorite</PageTitle>
+          <p className={styles.favorite_subtitle}>No Cards</p>
+      </div>
+      );
+    };
+
+      return(
+        <div className={styles.favorite}>
+          <PageTitle>Favorite</PageTitle>
+          <ul className={styles.cards}>
+            {favoriteCards.map(card => <Card key={card.id} {...card} isFavorite={card.isFavorite} />)}
+          </ul>
+        </div>
+      )
+  };
 
 
-const Favorite = (props) => { 
-
-  const allCards = useSelector(getFavoriteList);
-  console.log(allCards)
-
-  if(allCards.length === 0) {
-    return (
-      <>
-        <PageTitle>Favorite</PageTitle>
-        <p className={styles.title}>List is empty...</p>
-      </>
-    )
-  }
-
-  return(
-    <div className={styles.favorite}>
-       <article className={styles.column}>
-        <ul className={styles.cards}>
-          {allCards.map(card => <Card key={shortid()} title={card.title} isFavorite={allCards.isFavorite}/>)}
-        </ul>
-      </article>
-    </div>
-  )
-};
 
 export default Favorite;

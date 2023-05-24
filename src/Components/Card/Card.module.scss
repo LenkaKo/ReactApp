@@ -12,12 +12,26 @@
     font-weight: bold;
 }
 
-.isActive {
-  color: tomato;
+.star_btn {
+  color: $color-dark;
+  cursor: pointer;
+  border: none;
+  background-color: inherit;
+  font-size: 20px;
 }
 
-button {
-  background: transparent;
-  border: none;
-  cursor: pointer;
+.activestar {
+  color: #f1c40f;
+}
+
+.remove_btn {
+    color: $color-dark;
+    cursor: pointer;
+    border: none;
+    background-color: inherit;
+    font-size: 20px;
+}
+
+.remove_btn:hover {
+  color:red;
 }

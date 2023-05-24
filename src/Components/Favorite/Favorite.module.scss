@@ -1,49 +1,38 @@
 @use "sass:math";
 @import '../../Styles/settings.scss';
 
-.hero {
+  .hero {
     padding: $base-size;
   }
 
   .favorite_subtitle {
-    padding: ($base-size * 3) 0;
+    padding: ($base-size * 2) 0;
+    font-size: 15px;
     text-align: center;
-    font-size: ($base-size * 3);
-    text-transform: uppercase;
   }
 
-  .column {
+  .favorite {
+    padding: $base-size;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &:last-child {
+        margin: 0 0 $base-size 0;
+    }
+  }
+
+
+  .cards {
+    padding: math.div($base-size, 2) 0;
     flex-shrink: 0;
     width: calc(33% - 12px);
     background: $color-light;
-    margin: 0 auto;
+    margin-top: 30px;
     padding: ($base-size * 1.5);
     border-radius: $radius;
-    box-shadow: 0 math.div($base-size, 4) 0 rgba(0,0,0,0.3);
+    box-shadow: 0 math.div($base-size, 4) 0 rgba(0, 0, 0, 0.3);
     color: $color-dark;
-  
-    &:last-child {
-      margin: 0 auto;
-    }
-  }
-  
-  .title {
-    text-align: center;
-    font-size: ($base-size * 1.5);
-    margin: 0 0 ($base-size * 1.5) 0;
-  }
-  
-  .icon::before {
-    padding-right: $base-size;
-    color: $color-warning;
-    font-size: ($base-size * 2);
-    vertical-align: middle;
-    position: relative;
-    top: - math.div($base-size, 3);
-  }
-  
-  .cards {
-    padding: math.div($base-size, 2) 0;
   }
   
   @media (max-width: 767px) {
